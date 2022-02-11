@@ -28,6 +28,16 @@ namespace Gudens_Theater.Controllers
             return View();
         }
 
+        [Route("contact")]
+        public IActionResult Contact()
+        {
+            return View();
+        }
+        [Route("home-pagina")]
+        public IActionResult home_pagina()
+        {
+            return View();
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
