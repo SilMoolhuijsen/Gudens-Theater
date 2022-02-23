@@ -6,3 +6,24 @@
     left: -232px;
     background-color: #99F5FF;
 }
+
+.navigation {
+    position: relative;
+    Width: 50px;
+    lengt: 23px;
+    top: -588px;
+    left: -206;
+    background-color: #99F5FF;
+}
+
+body {
+    background-color: lightblue;
+}
+
+.contact {
+    position: absolute;
+    width: 107px;
+    height: 128px;
+    background: #E5E627;
+    
+}
