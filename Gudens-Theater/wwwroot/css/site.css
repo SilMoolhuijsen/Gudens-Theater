@@ -1,29 +1,17 @@
-﻿.rectangle {
-    position: relative;
-    width: 428px;
-    height: 926px;
-    top: -641px;
-    left: -232px;
-    background-color: #99F5FF;
+﻿body{
+    margin:0;
+}
+nav{
+    display:flex;
+}
+nav a{
+    background-color:green;
+    padding: 40px 10px;
+    color:white;
+    text-decoration:none;
+    flex:1;
 }
 
-.navigation {
-    position: relative;
-    Width: 50px;
-    lengt: 23px;
-    top: -588px;
-    left: -206;
-    background-color: #99F5FF;
-}
-
-body {
-    background-color: lightblue;
-}
-
-.contact {
-    position: absolute;
-    width: 107px;
-    height: 128px;
-    background: #E5E627;
-    
+.showsLink{
+    background-color:red;
 }
