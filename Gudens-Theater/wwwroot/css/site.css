@@ -12,6 +12,17 @@ nav a{
     flex:1;
 }
 
-.showsLink{
-    background-color:red;
+.homeLink {
+    background-color: #99F5FF;
+}
+.showsLink {
+    background-color: #AC49E6;
+}
+
+.priceLink {
+    background-color: #FA610F;
+}
+
+.contactLink {
+    background-color: #E5E627;
 }

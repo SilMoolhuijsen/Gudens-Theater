@@ -34,7 +34,7 @@ namespace Gudens_Theater.Controllers
             return View();
         }
         [Route("home-pagina")]
-        public IActionResult home_pagina()
+        public IActionResult index()
         {
             return View();
         }
@@ -42,6 +42,16 @@ namespace Gudens_Theater.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+        [Route("shows")]
+        public IActionResult shows()
+        {
+            return View();
+        }
+        [Route("prijzen")]
+        public IActionResult prijzen()
+        {
+            return View();
         }
     }
 }
