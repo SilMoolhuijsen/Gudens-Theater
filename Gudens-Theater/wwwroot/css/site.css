@@ -1,5 +1,6 @@
 ﻿body{
     margin:0;
+    
 }
 nav{
     display:flex;
@@ -25,4 +26,12 @@ nav a{
 
 .contactLink {
     background-color: #E5E627;
+}
+
+.banner{
+    display:flex;
+    background-color: lightgrey;   
+    border: 15px solid blue;
+    padding: 50px;
+    margin: 20px;
 }
