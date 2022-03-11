@@ -26,3 +26,49 @@ nav a{
 .contactLink {
     background-color: #E5E627;
 }
+
+.shows {
+    position: absolute;
+    width: 151px;
+    height: 121px;
+    left: 30px;
+    top: 290px;
+    background: url();
+    
+    position: absolute;
+    width: 151px;
+    height: 121px;
+    left: 239px;
+    top: 290px;
+    background: url();
+    position: absolute;
+    width: 151px;
+    height: 121px;
+    left: 32px;
+    top: 510px;
+    background: url();
+    position: absolute;
+    width: 151px;
+    height: 121px;
+    left: 239px;
+    top: 510px;
+    background: url();
+    position: absolute;
+    width: 151px;
+    height: 121px;
+    left: 30px;
+    top: 732px;
+    background: url();
+    position: absolute;
+    width: 151px;
+    height: 121px;
+    left: 245px;
+    top: 731px;
+    background: url();
+    position: absolute;
+    width: 58px;
+    height: 51px;
+    left: -2px;
+    top: 128px;
+    background: url();
+}
