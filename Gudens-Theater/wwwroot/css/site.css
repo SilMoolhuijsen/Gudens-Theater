@@ -28,10 +28,49 @@ nav a{
     background-color: #E5E627;
 }
 
-.banner{
-    display:flex;
-    background-color: lightgrey;   
-    border: 15px solid blue;
-    padding: 50px;
-    margin: 20px;
+.banner {
+    display: flex;
+    background-color: #46FFDD;
+    border: none;
+    padding: 5px;
+    margin: 0px;
+}
+
+h7 {
+    font-size: 4vw;
+    text-align: center;
+    margin-left: 28vw;
+}
+
+h8 {
+    font-size: 3vw;
+    margin-left: 33vw;
+    margin-top: 33vw;
+    text-align: center;
+    
+}
+
+
+
+.voorstelling {
+    font-size: 3vw;
+    display: flex;
+    flex-wrap: wrap;
+}
+}
+
+h9 {
+    top: 100px;
+}
+
+.uitgelichte_shows { 
+    margin: 20%;
+    font-size: 3vw;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    padding: 10px;
+    background-color: green;
+    gap: 20%;
+    flex-grow: 1;
 }
