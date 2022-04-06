@@ -1,4 +1,6 @@
-﻿using Gudens_Theater.Models;
+﻿using MySql.Data;
+
+using Gudens_Theater.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -6,6 +8,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Gudens_Theater.Database;
 
 namespace Gudens_Theater.Controllers
 {
@@ -17,11 +20,24 @@ namespace Gudens_Theater.Controllers
         {
             _logger = logger;
         }
-
         public IActionResult Index()
         {
-            return View();
+            // alle producten ophalen
+            var rows = DatabaseConnector.GetRows("select * from product");
+
+            // lijst maken om alle namen in te stoppen
+            List<string> names = new List<string>();
+
+            foreach (var row in rows)
+            {
+                // elke naam toevoegen aan de lijst met namen
+                names.Add(row["naam"].ToString());
+            }
+
+            // de lijst met namen in de html stoppen
+            return View(names);
         }
+
 
         public IActionResult Privacy()
         {

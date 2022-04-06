@@ -1,6 +1,15 @@
-﻿@{
+﻿@model List<string>
+@{
     ViewData["Title"] = "Home Page";
 }
+
+<div class="text-center">
+    <h6> Alle namen!</h6>
+    @foreach(string naam in Model)
+    {
+        <p>@naam</p>
+    }
+</div>
 
 <div class="myDiv">
     <div class="banner"> <h7>Het Gudens theater </h7> </div>
