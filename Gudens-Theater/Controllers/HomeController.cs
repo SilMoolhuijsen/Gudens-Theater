@@ -69,5 +69,15 @@ namespace Gudens_Theater.Controllers
         {
             return View();
         }
+        public List<Product> GetAllProducts()
+        {
+            var rows = DatabaseConnector.GetRows("select * from product");
+                List<Product> products = new List<Product>();
+
+            foreach (var row in rows)
+            { Product product = new Product();
+            }
+
+                }
     }
 }
