@@ -20,25 +20,31 @@ namespace Gudens_Theater.Controllers
         {
             _logger = logger;
         }
-        public IActionResult Index()
-        {
-            // alle producten ophalen
-            var rows = DatabaseConnector.GetRows("select * from product");
 
-            // lijst maken om alle namen in te stoppen
-            List<string> names = new List<string>();
+    public IActionResult Index()
+    { 
+        var products = GetAllProducts();
+        return View(products);
+    }
+
+
+
+        public List<Product> GetAllProducts()
+        {
+            var rows = DatabaseConnector.GetRows("select * from product");
+            List<Product> products = new List<Product>();
 
             foreach (var row in rows)
+
             {
-                // elke naam toevoegen aan de lijst met namen
-                names.Add(row["naam"].ToString());
+                Product product = new Product();
+                product.naam = row["naam"].ToString();
+                product.prijs = row["prijs"].ToString();
+                products.Add(product);
             }
 
-            // de lijst met namen in de html stoppen
-            return View(names);
+            return products;
         }
-
-
         public IActionResult Privacy()
         {
             return View();
@@ -69,15 +75,8 @@ namespace Gudens_Theater.Controllers
         {
             return View();
         }
-        public List<Product> GetAllProducts()
-        {
-            var rows = DatabaseConnector.GetRows("select * from product");
-                List<Product> products = new List<Product>();
 
-            foreach (var row in rows)
-            { Product product = new Product();
-            }
 
-                }
     }
 }
+

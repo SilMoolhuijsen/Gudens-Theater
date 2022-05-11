@@ -1,14 +1,18 @@
-﻿@model List<string>
+﻿@using Gudens_Theater.Database
+
+@model List<Product>
 @{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
     <h6> Alle namen!</h6>
-    @foreach(string naam in Model)
+    <ul>
+    @foreach(var product in Model)
     {
-        <p>@naam</p>
+        <li>@product.naam - @product.prijs - @product.Id</li>
     }
+    </ul>
 </div>
 
 <div class="myDiv">
