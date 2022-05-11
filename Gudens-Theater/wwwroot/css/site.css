@@ -1,15 +1,21 @@
-﻿body{
-    margin:0;
+﻿body {
+    margin: 0;
 }
-nav{
-    display:flex;
+
+nav {
+    display: flex;
 }
-nav a{
-    background-color:green;
+
+nav a {
+    background-color: green;
     padding: 40px 10px;
-    color:white;
-    text-decoration:none;
-    flex:1;
+    color: white;
+    text-decoration: none;
+    flex: 1;
+}
+
+.hometekst {
+    padding: 10px
 }
 
 .hometekst,
@@ -17,14 +23,26 @@ nav a{
     background-color: #99F5FF;
 }
 
+.showstekst {
+    padding: 10px
+}
+
 .showstekst,
 .showsLink {
     background-color: #AC49E6;
 }
 
+.prijzentekst {
+    padding: 10px
+}
+
 .prijzentekst,
 .priceLink {
     background-color: #FA610F;
+}
+
+.contacttekst {
+    padding: 10px
 }
 
 .contacttekst,
@@ -51,23 +69,21 @@ h8 {
     margin-left: 33vw;
     margin-top: 33vw;
     text-align: center;
-    
 }
-
-
 
 .voorstelling {
     font-size: 3vw;
     display: flex;
     flex-wrap: wrap;
 }
+
 }
 
 h9 {
     top: 100px;
 }
 
-.uitgelichte_shows { 
+.uitgelichte_shows {
     margin: 20%;
     font-size: 3vw;
     display: flex;
@@ -77,4 +93,8 @@ h9 {
     background-color: green;
     gap: 20%;
     flex-grow: 1;
+}
+
+ul {
+    margin: 0;
 }
