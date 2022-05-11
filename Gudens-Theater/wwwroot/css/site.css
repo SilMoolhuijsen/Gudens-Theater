@@ -1,6 +1,5 @@
 ﻿body{
     margin:0;
-    
 }
 nav{
     display:flex;
@@ -13,17 +12,22 @@ nav a{
     flex:1;
 }
 
+.hometekst,
 .homeLink {
     background-color: #99F5FF;
 }
+
+.showstekst,
 .showsLink {
     background-color: #AC49E6;
 }
 
+.prijzentekst,
 .priceLink {
     background-color: #FA610F;
 }
 
+.contacttekst,
 .contactLink {
     background-color: #E5E627;
 }

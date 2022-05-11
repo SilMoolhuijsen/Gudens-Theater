@@ -3,10 +3,10 @@
 @model List<Product>
 @{
     ViewData["Title"] = "Home Page";
+    ViewData["page"] = "hometekst";
 }
 
 <div class="text-center">
-    <h6> Alle namen!</h6>
     <ul>
     @foreach(var product in Model)
     {
