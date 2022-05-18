@@ -6,26 +6,13 @@
     ViewData["page"] = "hometekst";
 }
 
-<div class="text-center">
-    <ul>
+<div class="container2">
+<div class="grid">
+  
     @foreach(var product in Model)
     {
-        <li>@product.naam - @product.prijs - @product.Id</li>
-        <img src=""/>
+        <div class="item">@product.naam - @product.prijs - @product.Id</div>
+      //<img src=""/>
     }
-    </ul>
 </div>
-
-<div class="myDiv">
-    <div class="banner"> <h7>Het Gudens theater </h7> </div>
-</div>
-
-
-<h8>uitgelichte shows</h8>
-
-<div class="uitgelichte_shows">
-    <div class="voorstelling"> voorstelling 1</div>
-    <div class="voorstelling"> voorstelling 2</div>
-    <div class="voorstelling"> voorstelling 3</div>
-    <div class="voorstelling"> voorstelling 4</div>
 </div>
