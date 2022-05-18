@@ -21,11 +21,11 @@ namespace Gudens_Theater.Controllers
             _logger = logger;
         }
 
-    public IActionResult Index()
-    { 
-        var products = GetAllProducts();
-        return View(products);
-    }
+        public IActionResult Index()
+        {
+            var products = GetAllProducts();
+            return View(products);
+        }
 
 
 
@@ -37,10 +37,11 @@ namespace Gudens_Theater.Controllers
             foreach (var row in rows)
 
             {
-                Product product = new Product();
-                product.naam = row["naam"].ToString();
-                product.prijs = row["prijs"].ToString();
-                products.Add(product);
+                Product p = new Product();
+                p.Naam = row["naam"].ToString();
+                p.Prijs = row["prijs"].ToString();
+                p.Id = Convert.ToInt32(row["id"]);
+                products.Add(p);
             }
 
             return products;
@@ -76,6 +77,31 @@ namespace Gudens_Theater.Controllers
             return View();
         }
 
+        [Route("product/{id}")]
+        public IActionResult ProductDetails(int id)
+        {
+            var product = GetProduct(id);
+
+            return View(product);
+        }
+
+        public Product GetProduct(int id)
+        {
+            var rows = DatabaseConnector.GetRows($"select * from product where id = {id}");
+            List<Product> products = new List<Product>();
+
+            foreach (var row in rows)
+
+            {
+                Product p = new Product();
+                p.Naam = row["naam"].ToString();
+                p.Prijs = row["prijs"].ToString();
+                p.Id = Convert.ToInt32(row["id"]);
+                products.Add(p);
+            }
+
+            return products[0];
+        }
 
     }
 }
