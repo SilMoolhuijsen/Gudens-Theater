@@ -37,10 +37,11 @@ namespace Gudens_Theater.Controllers
             foreach (var row in rows)
 
             {
-                Product product = new Product();
-                product.naam = row["naam"].ToString();
-                product.prijs = row["prijs"].ToString();
-                products.Add(product);
+                Product p = new Product();
+                p.Naam = row["naam"].ToString();
+                p.Prijs = row["prijs"].ToString();
+                p.Id = Convert.ToInt32(row["id"]);
+                products.Add(p);
             }
 
             return products;
@@ -79,12 +80,12 @@ namespace Gudens_Theater.Controllers
         [Route("product/{id}")]
         public IActionResult ProductDetails(int id)
         {
-            var productt = GetProduct(id);
+            var product = GetProduct(id);
 
             return View(product);
         }
 
-        public List<Product> GetProduct()
+        public Product GetProduct(int id)
         {
             var rows = DatabaseConnector.GetRows($"select * from product where id = {id}");
             List<Product> products = new List<Product>();
@@ -92,13 +93,14 @@ namespace Gudens_Theater.Controllers
             foreach (var row in rows)
 
             {
-                Product product = new Product();
-                product.naam = row["naam"].ToString();
-                product.prijs = row["prijs"].ToString();
-                products.Add(product);
+                Product p = new Product();
+                p.Naam = row["naam"].ToString();
+                p.Prijs = row["prijs"].ToString();
+                p.Id = Convert.ToInt32(row["id"]);
+                products.Add(p);
             }
 
-            return products;
+            return products[0];
         }
 
     }
