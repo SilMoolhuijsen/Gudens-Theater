@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Content Remove="Views\Home\home_pagina.cshtml" />
+    <Content Remove="wwwroot\img\1_zaqJ93CnKU7Qr-ldVMWSJA.png" />
   </ItemGroup>
 
   <ItemGroup>
