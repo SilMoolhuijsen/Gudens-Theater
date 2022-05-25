@@ -7,20 +7,10 @@
 <p>Contactformulier:</p>
 
 <form> 
-     <div>
-     <label for="fname">First name:</label><br>
-     <input type="text" id="fname" value=""><br><br>
-     </div>
-
-     <div>
-     <label for="fname">Last name:</label><br>
-     <input type="text" id="fname" value=""><br><br>
-     </div>
-
-     <div>
-     <label for="fname">Email Adress:</label><br>
-     <input type="text" id="fname" value=""><br><br>
-     </div>
-
-     <input type="submit" value="Submit">
+    voornaam: <input type="text" name="firstname" />
+    achternaam: <input type="text" name="lastname" />
+    <input type="submit" value="verstuur" />
 </form>
+
+
+<p>hallo @ViewData["firstname"] die achternaam @ViewData["lastname"] heeft</p>
