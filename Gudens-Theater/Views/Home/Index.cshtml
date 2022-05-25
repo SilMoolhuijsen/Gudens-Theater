@@ -11,9 +11,8 @@
   
     @foreach(var product in Model)
     {
-        <div class="item">@product.Naam - @product.Prijs - @product.Id</div>
-        <a>a href="/product/product.Id>@product.Naam"</a>
-      //<img src=""/>
+        <div class="item"><a href="/product/@product.Id">@product.Naam - @product.Prijs</a></div>
+        //<img src=""/>
     }
 </div>
 </div>
