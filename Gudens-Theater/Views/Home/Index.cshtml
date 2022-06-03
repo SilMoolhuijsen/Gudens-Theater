@@ -11,7 +11,7 @@
   
     @foreach(var show in Model)
     {
-        <div class="item"><a href="/product/@show.Id"><img src="getImage.php?id=1" width="175" height="200"/>@show.Naam - @show.beschrijving - @show.datum</a></div>
+        <div class="item"><a href="/product/@show.id"><img src="getImage.php?id=1" width="175" height="200"/>@show.naam - @show.beschrijving - @show.datum</a></div>
         <img src=@show.image/>
     }
 </div>

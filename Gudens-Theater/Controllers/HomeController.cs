@@ -23,28 +23,28 @@ namespace Gudens_Theater.Controllers
 
         public IActionResult Index()
         {
-            var products = GetAllProducts();
-            return View(products);
+            var shows = GetAllProducts();
+            return View(shows);
         }
 
 
 
         public List<Product> GetAllProducts()
         {
-            var rows = DatabaseConnector.GetRows("select * from product");
-            List<Product> products = new List<Product>();
+            var rows = DatabaseConnector.GetRows("select * from `show`");
+            List<Product> shows = new List<Product>();
 
             foreach (var row in rows)
 
             {
                 Product p = new Product();
-                p.Naam = row["naam"].ToString();
-                p.Prijs = row["prijs"].ToString();
-                p.Id = Convert.ToInt32(row["id"]);
-                products.Add(p);
+                p.naam = row["naam"].ToString();
+                p.beschrijving = row["beschrijving"].ToString();
+                p.id = Convert.ToInt32(row["id"]);
+                shows.Add(p);
             }
 
-            return products;
+            return shows;
         }
         public IActionResult Privacy()
         {
@@ -77,36 +77,36 @@ namespace Gudens_Theater.Controllers
         {
             return View();
         }
-        [Route("prijzen")]
-        public IActionResult prijzen()
+        [Route("beschrijvingen")]
+        public IActionResult beschrijvingen()
         {
             return View();
         }
 
-        [Route("product/{id}")]
+        [Route("show/{id}")]
         public IActionResult ProductDetails(int id)
         {
-            var product = GetProduct(id);
+            var show = GetProduct(id);
 
-            return View(product);
+            return View(show);
         }
 
         public Product GetProduct(int id)
         {
-            var rows = DatabaseConnector.GetRows($"select * from product where id = {id}");
-            List<Product> products = new List<Product>();
+            var rows = DatabaseConnector.GetRows($"select * from `show` where id = {id}");
+            List<Product> shows = new List<Product>();
 
             foreach (var row in rows)
 
             {
                 Product p = new Product();
-                p.Naam = row["naam"].ToString();
-                p.Prijs = row["prijs"].ToString();
-                p.Id = Convert.ToInt32(row["id"]);
-                products.Add(p);
+                p.naam = row["naam"].ToString();
+                p.beschrijving = row["beschrijving"].ToString();
+                p.id = Convert.ToInt32(row["id"]);
+                shows.Add(p);
             }
 
-            return products[0];
+            return shows[0];
         }
 
     }
