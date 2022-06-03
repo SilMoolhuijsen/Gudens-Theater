@@ -52,13 +52,22 @@ namespace Gudens_Theater.Controllers
         }
 
         [Route("contact")]
-        public IActionResult Contact(string firstname, string lastname)
+        public IActionResult Contact()
+        { 
+            return View(); 
+        }
+
+        [Route("contact")]
+        [HttpPost]
+        public IActionResult Contact(string firstName, string lastName)
         {
-            ViewData["firstname"] = firstname;
-            ViewData["lastname"] = lastname;
+            ViewData["firstName"] = firstName;
+            ViewData["lastName"] = lastName;
 
             return View();
         }
+
+
 
         [Route("home-pagina")]
         public IActionResult index()
