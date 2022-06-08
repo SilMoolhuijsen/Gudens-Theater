@@ -53,18 +53,15 @@ namespace Gudens_Theater.Controllers
 
         [Route("contact")]
         public IActionResult Contact()
-        { 
+        {
             return View(); 
         }
 
         [Route("contact")]
         [HttpPost]
-        public IActionResult Contact(string firstName, string lastName)
+        public IActionResult Contact(Person person)
         {
-            ViewData["firstName"] = firstName;
-            ViewData["lastName"] = lastName;
-
-            return View();
+            return View(person);
         }
 
 

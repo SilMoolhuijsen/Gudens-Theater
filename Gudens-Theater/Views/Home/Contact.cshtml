@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Gudens_Theater.Models.Person
+@{
     ViewData["Title"] = "Contact";
     ViewData["page"] = "contacttekst";
 }
@@ -7,10 +8,12 @@
 <p>Contactformulier:</p>
 
 <form method="post"> 
-    voornaam: <input type="text" name="firstname" />
-    achternaam: <input type="text" name="lastname" />
+    <div> voornaam: <input type="text" name="firstname" /></div>
+    <div> achternaam: <input type="text" name="lastname" /></div>
     <input type="submit" value="verstuur" />
 </form>
 
 
-<p>hallo @ViewData["firstname"] die achternaam @ViewData["lastname"] heeft</p>
+@if(Model!= null){
+    <p>hallo @Model.firstname die achternaam @Model.lastname heeft</p>
+}
