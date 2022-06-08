@@ -4,7 +4,8 @@
     ViewData["Title"] = Model.naam;
 }
 
+<img src=@Model.image width="750" height="600"/>
 <div class="text-center">
- <h1 class="display-4">@Model.naam</h1>
+ <h1 class="display-4">@Model.naam - @Model.datum.ToString("D")</h1>
  <p>@Model.beschrijving</p>
 </div>

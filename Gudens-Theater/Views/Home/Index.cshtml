@@ -7,14 +7,16 @@
 }
 
 <div class="container2">
-<div class="grid">
-  
-    @foreach(var show in Model)
-    {
-        <div class="item"><a href="/product/@show.id">
-            <img src="getImage.php?id=1" width="175" height="200"/>@show.naam - @show.datum.ToString("D")</a>
+    <div class="grid">
+
+        @foreach (var show in Model)
+        {
+            <div class="item">
+                <a href="/product/@show.id">
+                    <img src=@show.image width="250" height="200" />
+                    <p>@show.naam - @show.datum.ToString("D")</p>
+                </a>
             </div>
-        <img src=@show.image/>
-    }
-</div>
+        }
+    </div>
 </div>
