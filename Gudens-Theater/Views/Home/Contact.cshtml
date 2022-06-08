@@ -9,7 +9,11 @@
 
 <form method="post"> 
     <div> voornaam: <input type="text" name="firstname" /></div>
+    @Html.ValidationMessageFor(m => m.firstname)
     <div> achternaam: <input type="text" name="lastname" /></div>
+    @Html.ValidationMessageFor(m => m.lastname)
+    <div> email: <input type="text" name="email" /></div>
+    @Html.ValidationMessageFor(m => m.email)
     <input type="submit" value="verstuur" />
 </form>
 
