@@ -9,6 +9,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Gudens_Theater.Database;
+using System.Globalization;
 
 namespace Gudens_Theater.Controllers
 {
@@ -27,8 +28,6 @@ namespace Gudens_Theater.Controllers
             return View(shows);
         }
 
-
-
         public List<Product> GetAllProducts()
         {
             var rows = DatabaseConnector.GetRows("select * from `show`");
@@ -37,15 +36,24 @@ namespace Gudens_Theater.Controllers
             foreach (var row in rows)
 
             {
-                Product p = new Product();
-                p.naam = row["naam"].ToString();
-                p.beschrijving = row["beschrijving"].ToString();
-                p.id = Convert.ToInt32(row["id"]);
+                Product p = GetProductFromRow(row);
                 shows.Add(p);
             }
 
             return shows;
         }
+
+        private static Product GetProductFromRow(Dictionary<string, object> row)
+        {
+            Product p = new Product();
+            p.naam = row["naam"].ToString();
+            p.beschrijving = row["beschrijving"].ToString();
+            p.id = Convert.ToInt32(row["id"]);
+            p.datum = DateTime.Parse(row["datum"].ToString());
+            p.image = row["image"].ToString();
+            return p;
+        }
+
         public IActionResult Privacy()
         {
             return View();
@@ -67,14 +75,6 @@ namespace Gudens_Theater.Controllers
             return View();
         }
 
-
-
-        [Route("home-pagina")]
-        public IActionResult index()
-        {
-            return View();
-        }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
@@ -86,13 +86,20 @@ namespace Gudens_Theater.Controllers
         {
             return View();
         }
+
+        [Route("prijzen")]
+        public IActionResult prijzen()
+        {
+            return View();
+        }
+        
         [Route("beschrijvingen")]
         public IActionResult beschrijvingen()
         {
             return View();
         }
 
-        [Route("show/{id}")]
+        [Route("Product/{id}")]
         public IActionResult ProductDetails(int id)
         {
             var show = GetProduct(id);
@@ -106,12 +113,8 @@ namespace Gudens_Theater.Controllers
             List<Product> shows = new List<Product>();
 
             foreach (var row in rows)
-
             {
-                Product p = new Product();
-                p.naam = row["naam"].ToString();
-                p.beschrijving = row["beschrijving"].ToString();
-                p.id = Convert.ToInt32(row["id"]);
+                Product p = GetProductFromRow(row);                
                 shows.Add(p);
             }
 
