@@ -70,7 +70,9 @@ namespace Gudens_Theater.Controllers
         public IActionResult Contact(Person person)
         {
             if (ModelState.IsValid)
-                return Redirect("/succes");
+                DatabaseConnector.SavePerson(person);
+            return Redirect("/succes");
+                
             return View(person);
         }
 
@@ -91,7 +93,13 @@ namespace Gudens_Theater.Controllers
         {
             return View();
         }
-        
+
+        [Route("succes")]
+        public IActionResult succes()
+        {
+            return View();
+        }
+
         [Route("beschrijvingen")]
         public IActionResult beschrijvingen()
         {
