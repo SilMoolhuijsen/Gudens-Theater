@@ -69,10 +69,10 @@ namespace Gudens_Theater.Controllers
         [HttpPost]
         public IActionResult Contact(Person person)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid) { 
                 DatabaseConnector.SavePerson(person);
             return Redirect("/succes");
-                
+        }
             return View(person);
         }
 

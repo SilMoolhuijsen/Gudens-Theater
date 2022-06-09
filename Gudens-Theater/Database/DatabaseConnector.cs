@@ -55,7 +55,7 @@ namespace Gudens_Theater.Database
       using (MySqlConnection conn = new MySqlConnection(connectionString))
       {
         conn.Open();
-        MySqlCommand cmd = new MySqlCommand("INSERT INTO klant(voornaam, achternaam, email, bericht) VALUES(?voornaam, ?achternaam, ?email, ?bericht)", conn);
+        MySqlCommand cmd = new MySqlCommand("INSERT INTO klant(voornaam, achternaam, email) VALUES(?voornaam, ?achternaam, ?email)", conn);
 
         // Elke parameter moet je handmatig toevoegen aan de query
         cmd.Parameters.Add("?voornaam", MySqlDbType.Text).Value = person.firstname;
